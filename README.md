@@ -4,7 +4,7 @@
 
 ### Disposable library profile for end-to-end release certification
 
-**Private clean-room VBA library used for release-path certification.**
+**Disposable public clean-room VBA library used for release-path certification.**
 
 <br>
 
