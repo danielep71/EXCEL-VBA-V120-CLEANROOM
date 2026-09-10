@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "profile": "library",
+  "template_contract": {
+    "version": "1.2.0",
+    "source": "danielep71/EXCEL-VBA-PROJECT-TEMPLATE"
+  },
+  "values": {
+    "COPYRIGHT_YEAR": "2026",
+    "MAINTAINER_NAME": "Daniele Penza",
+    "PROJECT_DESCRIPTION": "Private clean-room VBA library used for release-path certification.",
+    "PROJECT_NAME": "Excel VBA v1.2.0 Cleanroom",
+    "PROJECT_TAGLINE": "Disposable library profile for end-to-end release certification",
+    "REPOSITORY_PATH": "danielep71/EXCEL-VBA-V120-CLEANROOM",
+    "SUPPORT_CONTACT": "https://github.com/danielep71/EXCEL-VBA-V120-CLEANROOM/security/policy"
+  }
+}

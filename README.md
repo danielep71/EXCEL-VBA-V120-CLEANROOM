@@ -1,10 +1,10 @@
 <div align="center">
 
-# ⚡ {{PROJECT_NAME}}
+# ⚡ Excel VBA v1.2.0 Cleanroom
 
-### {{PROJECT_TAGLINE}}
+### Disposable library profile for end-to-end release certification
 
-**{{PROJECT_DESCRIPTION}}**
+**Private clean-room VBA library used for release-path certification.**
 
 <br>
 
@@ -15,9 +15,9 @@
 
 <br>
 
-[![Static checks](https://github.com/danielep71/EXCEL-VBA-PROJECT-TEMPLATE/actions/workflows/static-checks.yml/badge.svg?branch=main)](https://github.com/danielep71/EXCEL-VBA-PROJECT-TEMPLATE/actions/workflows/static-checks.yml)
-[![Release](https://img.shields.io/github/v/release/danielep71/EXCEL-VBA-PROJECT-TEMPLATE?style=flat-square&label=release&color=217346)](https://github.com/danielep71/EXCEL-VBA-PROJECT-TEMPLATE/releases)
-[![Issues](https://img.shields.io/github/issues/danielep71/EXCEL-VBA-PROJECT-TEMPLATE?style=flat-square&color=d73a49)](https://github.com/danielep71/EXCEL-VBA-PROJECT-TEMPLATE/issues)
+[![Static checks](https://github.com/danielep71/EXCEL-VBA-V120-CLEANROOM/actions/workflows/static-checks.yml/badge.svg?branch=main)](https://github.com/danielep71/EXCEL-VBA-V120-CLEANROOM/actions/workflows/static-checks.yml)
+[![Release](https://img.shields.io/github/v/release/danielep71/EXCEL-VBA-V120-CLEANROOM?style=flat-square&label=release&color=217346)](https://github.com/danielep71/EXCEL-VBA-V120-CLEANROOM/releases)
+[![Issues](https://img.shields.io/github/issues/danielep71/EXCEL-VBA-V120-CLEANROOM?style=flat-square&color=d73a49)](https://github.com/danielep71/EXCEL-VBA-V120-CLEANROOM/issues)
 
 <br>
 
@@ -37,35 +37,14 @@
 
 </div>
 
-<!-- template:remove:start -->
-**New maintainer?** Follow the [step-by-step creation guide](docs/wiki/Home.md),
-then use its complete file and workflow reference as you customize the project.
-The guide identifies its source edition; confirm that edition before generation.
-<!-- template:remove:end -->
 
 ---
 
-<!-- template:optional:SOCIAL_PREVIEW_PATH:start -->
-<p align="center">
-  <img src="{{SOCIAL_PREVIEW_PATH}}"
-       alt="{{PROJECT_NAME}} — {{PROJECT_TAGLINE}}"
-       width="100%">
-</p>
 
----
-<!-- template:optional:SOCIAL_PREVIEW_PATH:end -->
-
-<!-- template:remove:start -->
-> [!IMPORTANT]
-> This repository is still in template mode. Create a repository with **Use this
-> template**, then run the dry-run-first initializer before publishing or
-> developing the generated project. A green static gate does not prove Excel
-> execution or release certification.
-<!-- template:remove:end -->
 
 ## ✨ What this project is
 
-{{PROJECT_NAME}} is a source-first Excel/VBA project. Exported VBA, tests,
+Excel VBA v1.2.0 Cleanroom is a source-first Excel/VBA project. Exported VBA, tests,
 versioned policy and documentation are the reviewable source of truth; Office
 packages are generated or release artifacts unless an exact path is explicitly
 governed.
@@ -87,27 +66,6 @@ assurance, and release certification.
 
 ## ⚡ Quick start
 
-<!-- template:remove:start -->
-### Before first use: initialize one generated profile
-
-Clone the new repository, review this deterministic dry-run, then repeat the
-same command with `--apply`:
-
-```bash
-python3 tools/initialize_repository.py --profile library \
-  --set PROJECT_NAME="Example Project" \
-  --set PROJECT_TAGLINE="A concise project identity" \
-  --set PROJECT_DESCRIPTION="One sentence describing the supported problem and audience." \
-  --set REPOSITORY_PATH="owner/repository" \
-  --set MAINTAINER_NAME="Example Maintainer" \
-  --set SUPPORT_CONTACT="security@example.com" \
-  --set COPYRIGHT_YEAR="2026"
-```
-
-Choose `library`, `ui-component`, or `application`. Optional values,
-repeatable values, failure behavior and the manual fallback are authoritative in
-[`docs/INITIALIZATION.md`](docs/INITIALIZATION.md).
-<!-- template:remove:end -->
 
 ### 1. Review the source contract
 
@@ -133,13 +91,6 @@ python3 tools/check_release.py --root . --self-test \
   --summary test-results/release-self-test.md
 ```
 
-<!-- template:repeatable:ADDITIONAL_TEST_COMMAND:start -->
-Run the project-specific check as well:
-
-```bash
-{{ADDITIONAL_TEST_COMMAND}}
-```
-<!-- template:repeatable:ADDITIONAL_TEST_COMMAND:end -->
 
 Then import the applicable VBA components into a supported Excel host, run
 **Debug → Compile VBAProject**, and execute the documented regression or smoke
@@ -166,33 +117,17 @@ weakens source integrity, security, action pinning or release provenance.
 
 ### Selected profile contract
 
-This repository is a **{{PROFILE_NAME}}**: {{PROFILE_PURPOSE}}.
-Its source contract covers {{PROFILE_SOURCE_CONTRACT}}.
-At minimum, retain {{PROFILE_EVIDENCE}}.
+This repository is a **library**: reusable callable VBA with no owned end-user shell.
+Its source contract covers public facade modules plus internal/core modules, with classes only when stateful objects are part of the API.
+At minimum, retain public API, caller-contract and focused regression evidence.
 
-<!-- template:profile:library:start -->
 ### Library commitments
 
 Keep the callable API independent of workbook selection and UI state. Forms,
 Ribbon XML and application lifecycle code remain out of scope unless the profile
 is deliberately changed.
-<!-- template:profile:library:end -->
 
-<!-- template:profile:ui-component:start -->
-### UI-component commitments
 
-Document initialization, reentrancy, cancellation, accessibility and cleanup.
-Tests must prove restoration of every Excel or Windows resource the component
-changes.
-<!-- template:profile:ui-component:end -->
-
-<!-- template:profile:application:start -->
-### Application commitments
-
-Document startup, shutdown, configuration, data boundaries, deployment,
-upgrade and rollback. A distributable package requires provenance and
-post-package smoke evidence.
-<!-- template:profile:application:end -->
 
 <a id="repository-shape"></a>
 
@@ -236,11 +171,6 @@ The hosted `Repository integrity` workflow checks source/repository facts and
 fails closed when a required validator or evidence report does not complete. It
 does **not** compile VBA or execute Excel.
 
-<!-- template:remove:start -->
-For checker maintenance, the independent
-[`CHECKER_DEVELOPMENT.md`](docs/CHECKER_DEVELOPMENT.md) contract protects the
-single-file, standard-library runtime and parser/reporter development boundaries.
-<!-- template:remove:end -->
 
 For a release candidate, use [`RELEASING.md`](RELEASING.md). SemVer/changelog
 semantics and release-evidence schemas are maintained separately in
@@ -281,17 +211,11 @@ document that owns your task:
 | Define release evidence | [`docs/RELEASE_EVIDENCE.md`](docs/RELEASE_EVIDENCE.md) |
 | Check release semantics | [`docs/RELEASE_SEMANTICS.md`](docs/RELEASE_SEMANTICS.md) |
 | Provision repository settings | [`docs/POST_CREATION_CHECKLIST.md`](docs/POST_CREATION_CHECKLIST.md) |
-<!-- template:remove:start -->
-| Maintain the portable checker | [`docs/CHECKER_DEVELOPMENT.md`](docs/CHECKER_DEVELOPMENT.md) |
-<!-- template:remove:end -->
 
 ## ⚠️ Known limitations
 
 Do not hide an unresolved support or assurance boundary.
 
-<!-- template:repeatable:KNOWN_LIMITATION:start -->
-{{KNOWN_LIMITATION}}
-<!-- template:repeatable:KNOWN_LIMITATION:end -->
 
 If no project-specific limitation is rendered, the general evidence boundaries
 above still apply: static inspection is not Excel execution, and one tested
@@ -307,7 +231,7 @@ restricted material. Suspected vulnerabilities must be reported privately using
 ## 📄 License and maintainer
 
 Distributed under the [MIT License](LICENSE). Maintained by
-**{{MAINTAINER_NAME}}**.
+**Daniele Penza**.
 
 ---
 

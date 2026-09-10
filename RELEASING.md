@@ -1,4 +1,4 @@
-# 🚀 {{PROJECT_NAME}} Release Guide
+# 🚀 Excel VBA v1.2.0 Cleanroom Release Guide
 
 [![Release model: exact source](https://img.shields.io/badge/release-exact%20source-0969da)](#release-invariants)
 [![SemVer contract](https://img.shields.io/badge/versioning-SemVer-3f4551)](docs/RELEASE_SEMANTICS.md)
@@ -20,7 +20,7 @@ profile evidence and asset-manifest schemas are owned by
 
 | Property | Authority |
 | --- | --- |
-| Project/profile | {{PROJECT_NAME}} / {{PROFILE_NAME}} |
+| Project/profile | Excel VBA v1.2.0 Cleanroom / library |
 | Current version | [`VERSION`](VERSION) |
 | User-visible history | [`CHANGELOG.md`](CHANGELOG.md) |
 | SemVer/changelog policy | [`docs/RELEASE_SEMANTICS.md`](docs/RELEASE_SEMANTICS.md) |
@@ -107,11 +107,6 @@ Run every project-specific numerical, UI, lifecycle, performance or packaging
 gate as well. A stronger specialist gate is additive; the generic repository
 gate never replaces it.
 
-<!-- template:remove:start -->
-For changes to checker behavior in the canonical template, also run the
-checker-development and semantic policy-coverage contracts documented in
-[`docs/CHECKER_DEVELOPMENT.md`](docs/CHECKER_DEVELOPMENT.md).
-<!-- template:remove:end -->
 
 ## 5. Certify in Excel
 
@@ -191,44 +186,10 @@ open, then certify the final `main` commit before tagging. A squash or merge
 creates a new source identity: retain original evidence attribution and obtain
 the required final-candidate evidence rather than silently rebinding old results.
 
-<!-- template:remove:start -->
-**Historical exception:** the v1.1.0 release PR used squash merging. The v1.2.0
-implementation entered `main` through PR #49 at
-`ac78ddca5de9de1fbfbf89d504b8ba93b06220c4` using a history-preserving merge
-during the move to stabilization on `main`. This records the existing outcome;
-it does not establish squash merging as the method used then or claim that
-v1.2.0 was published. Keep that merge and its ancestry intact.
-<!-- template:remove:end -->
 
 Do not force-push shared `main` or rewrite published tags to make historical
 merges conform retroactively. Apply this convention to future merges.
 
-<!-- template:remove:start -->
-### Canonical-template release certification
-
-Before creating a release tag for the canonical template, complete and retain
-all of these additional checks against the same exact candidate SHA:
-
-- run the live external-link observation defined by
-  [`docs/DOCUMENTATION_CHECKS.md`](docs/DOCUMENTATION_CHECKS.md); deterministic
-  documentation defects must be zero, while restricted or transient network
-  outcomes remain explicitly reported and are never converted to `PASS`;
-- complete a clean-room maintainer journey from live GitHub template creation
-  through initialization, live repository provisioning, Excel validation and a
-  first release; retain numbered steps, any gaps/corrections, and elapsed-step
-  evidence;
-- export the complete Wiki from the exact candidate SHA, publish it, freshly
-  clone/read back the publication, byte-compare it with zero drift, and record
-  both the source SHA and resulting Wiki commit; and
-- review the published Wiki in a browser, confirming Home, the sidebar and the
-  complete page-navigation set render and navigate as intended.
-
-These are tag blockers, not optional observations. A missing execution, an
-unresolved deterministic defect, publication drift or an incomplete browser
-review prevents tag creation. Network restrictions and transient failures remain
-non-success observations until separately resolved or explicitly reported under
-the documentation policy.
-<!-- template:remove:end -->
 
 ## 9. Create the protected annotated tag
 
@@ -250,7 +211,7 @@ python3 tools/check_release.py \
   --output test-results/release-integrity.json \
   --summary test-results/release-integrity.md
 
-git tag -a "$release_tag" -m "{{PROJECT_NAME}} ${release_version}"
+git tag -a "$release_tag" -m "Excel VBA v1.2.0 Cleanroom ${release_version}"
 
 python3 tools/check_release.py \
   --root . \
