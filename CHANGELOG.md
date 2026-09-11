@@ -103,6 +103,18 @@ Use only the categories needed by a release.
 
 No unreleased changes recorded.
 
+## [0.1.0] - 2026-09-11
+
+### Added
+
+- Initial generated `library` profile with source-first core, facade, deterministic regression harness and example modules.
+- Versioned repository governance, issue intake, CI and release-evidence contracts adopted from template contract 1.2.0.
+
+### Validation
+
+- Repository initialization is recorded, clean, idempotent and quality-valid.
+- Live GitHub provisioning reached a no-drift steady state with protected default-branch and version-tag rulesets.
+
 ---
 
 <!--
@@ -114,3 +126,6 @@ Release procedure:
    release, compare the preceding tag to the new release tag.
 5. Recreate an empty Unreleased section at the top.
 -->
+
+[Unreleased]: https://github.com/danielep71/EXCEL-VBA-V120-CLEANROOM/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/danielep71/EXCEL-VBA-V120-CLEANROOM/releases/tag/v0.1.0
